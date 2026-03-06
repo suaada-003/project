@@ -22,3 +22,12 @@ html {
   background-size: cover;
   position: relative;
 }
+
+.banner {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  
+  text-align: center;
+  width: 100%;
+}
