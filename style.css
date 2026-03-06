@@ -8,4 +8,8 @@
   list-style-type: none;
   font-family: "Baloo Da 2", cursive;
 }
+
+html {
+  font-size: 62.5%;}
+  
 /* End of Common Styles */
