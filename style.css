@@ -27,7 +27,13 @@ html {
   position: absolute;
   top: 20%;
   left: 50%;
-  
+  transform: translateX(-50%);
   text-align: center;
   width: 100%;
+}
+
+
+.banner-heading {
+  height: 20rem;
+  margin-bottom: 4rem;
 }
