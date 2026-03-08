@@ -62,7 +62,7 @@ html {
 }
 
 .banner-btn {
-  
+  width: 30rem;
   height: 6rem;
   background: linear-gradient(to right, #9b0e0e, #7a1010);
   color: #fff;
