@@ -72,7 +72,7 @@ html {
   border: 0.1rem solid #800505;
   box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.5);
 text-shadow: 0.6rem 0.3rem 0.2rem rgba(0, 0, 0, 0.4);
-
+cursor: pointer;
 }
 
 
