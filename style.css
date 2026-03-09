@@ -165,9 +165,14 @@ opacity: 0;
 top: 0;
   left: -100%;
   transform: skewX(-30deg);
-  /*transition: left 0.5s;*/
+transition: left 0.5s;
 }
 
+
+.banner-btn:hover::before {
+left:100%
+
+}
 
 
 
