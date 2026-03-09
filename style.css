@@ -109,12 +109,6 @@ html {
 }
 
 
-
-
-
-
-
-
 .banner-paragraph {
   font-size: 4rem;
   font-weight: 400;
@@ -125,7 +119,13 @@ html {
   margin: 0 auto 6rem auto;
   padding: 1rem 0;
   box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
+opacity: 0;
+  visibility: hidden;
+  animation: fadeAnimation 1s 1.5s forwards;
+
 }
+
+
 
 .banner-btn {
   width: 30rem;
