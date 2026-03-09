@@ -36,6 +36,7 @@ html {
 .banner-heading {
   height: 20rem;
   margin-bottom: 4rem;
+  perspective: 50rem;
 }
 
 
