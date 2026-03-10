@@ -70,6 +70,17 @@ html {
   visibility: hidden;
   transition: all 0.2s;
 }
+
+.nav-link {
+  font-family: "MADE Soulmaze", sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  color: #fff;
+  margin: 2rem 0;
+  transition: color 0.4s;
+}
+
+
 /* End of Navbar */
 
 
@@ -115,18 +126,6 @@ html {
   transform-origin: right;
 }
 
-.nav-list {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.2s;
-}
 
 .change .nav-list {
   opacity: 1;
