@@ -24,6 +24,15 @@ html {
   padding: 3rem;
 }
 
+.navbar-logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 4rem;
+}
+
+
+
+
 
 .section-1 {
   width: 100%;
