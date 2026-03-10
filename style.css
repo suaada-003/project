@@ -37,6 +37,13 @@ html {
   letter-spacing: 0.1rem;
 }
 
+.navbar-logo span {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #9e0e09;
+  font-family: "MADE Soulmaze";
+}
+
 
 
 .section-1 {
