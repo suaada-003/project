@@ -63,6 +63,18 @@ html {
   transition: all 0.7s 0.5s;
 }
 
+.nav-link {
+  font-family: "MADE Soulmaze", sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  color: #fff;
+  margin: 2rem 0;
+  transition: color 0.4s;
+}
+
+
+
+
 
 
 .section-1 {
