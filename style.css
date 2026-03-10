@@ -25,6 +25,12 @@ html {
   z-index: 10;
 }
 
+.navbar.change {
+  height: 100vh;
+}
+
+
+
 .navbar-logo {
 position: absolute;
 top: 1.5rem;
