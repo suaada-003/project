@@ -44,6 +44,20 @@ html {
   font-family: "MADE Soulmaze";
 }
 
+.menu {
+  width: 4rem;
+  height: 4rem;
+  position: fixed;
+  z-index: 500;
+  top: 2rem;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+
 .nav-list {
   position: absolute;
   top: 25%;
