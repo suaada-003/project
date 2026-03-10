@@ -20,8 +20,9 @@ html {
   height: 8rem;
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
-  top: -8rem;
+  top: 0;
   padding: 3rem;
+  z-index: 10;
 }
 
 .navbar.change {
@@ -37,26 +38,44 @@ html {
   }
 }
 
-.navbar-logo {
+.logo {
   position: absolute;
   top: 1.5rem;
   left: 4rem;
 }
 
-.navbar-logo a {
+.logo a {
   font-family: "MADE Soulmaze", sans-serif;
   font-size: 2.5rem;
   color: #eee;
   letter-spacing: 0.1rem;
 }
 
-.navbar-logo span {
+.logo span {
   font-size: 3.5rem;
   font-weight: bold;
   color: #9e0e09;
   font-family: "MADE Soulmaze";
 }
 
+.nav-list {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+/* End of Navbar */
+
+
+
+
+/*menu*/
 .menu {
   width: 4rem;
   height: 4rem;
@@ -127,7 +146,7 @@ html {
 .nav-link:hover {
   color: #9e0e09;
 }
-/*  End of Navbar */
+
 
 
 
