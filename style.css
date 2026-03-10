@@ -30,7 +30,12 @@ html {
   left: 4rem;
 }
 
-
+.navbar-logo a {
+  font-family: "MADE Soulmaze", sans-serif;
+  font-size: 2.5rem;
+  color: #eee;
+  letter-spacing: 0.1rem;
+}
 
 
 
