@@ -9,34 +9,56 @@ menu.addEventListener("click", () => {
 // End of Navbar
 
 // Section 2 Video
-const video = document.querySelector('.video')
-const btn = document.querySelector('.buttons button i');
-const bar = document.querySelector('.video-bar')
+const video = document.querySelector(".video");
+const playPauseBtn = document.querySelector("#play-pause");
+const playPauseIcon = playPauseBtn ? playPauseBtn.querySelector("i") : null;
+const bar = document.querySelector(".video-bar");
 
-const playPause = () => {
-  if(video.paused) {
-    video.play()
-    btn.className = 'far fa-pause-circle'
-    video.style.opacity = '.7'
+const setPlayingUI = (isPlaying) => {
+  if (!playPauseIcon) return;
+  playPauseIcon.className = isPlaying
+    ? "far fa-pause-circle"
+    : "far fa-play-circle";
+  video.style.opacity = isPlaying ? ".7" : ".3";
+};
+
+const playPause = async () => {
+  if (!video || !playPauseBtn) return;
+
+  if (video.paused) {
+    try {
+      await video.play();
+      setPlayingUI(true);
+    } catch (e) {
+      // If the browser blocks playback, keep UI in "paused"
+      setPlayingUI(false);
+    }
   } else {
-    video.pause()
-    btn.className = 'far fa-play-circle'
-    video.style.opacity = '.3'
+    video.pause();
+    setPlayingUI(false);
   }
+};
+
+if (playPauseBtn) {
+  playPauseBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    playPause();
+  });
 }
 
-btn.addEventListener('click', () => {
-  playPause()
-})
+if (video) {
+  video.addEventListener("click", () => {
+    playPause();
+  });
+}
 
 
-video.addEventListener('timeupdate', () => {
-  console.log(video.currentTime, video.duration)
-  const barWidth = video.currentTime / video.duration;
-  bar.style.width = `${barWidth * 100}%` 
-  if(video.ended) {
-    btn.className = 'far fa-play-circle'
-    video.style.opacity = '.3'
-  } 
-})
+if (video) {
+  video.addEventListener("timeupdate", () => {
+    if (!bar || !video.duration) return;
+    const barWidth = video.currentTime / video.duration;
+    bar.style.width = `${barWidth * 100}%`;
+    if (video.ended) setPlayingUI(false);
+  });
+}
 // End of Section 2 Video

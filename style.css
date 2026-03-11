@@ -328,7 +328,7 @@ left:100%
   font-family: "Oswald", sans-serif;
   font-weight: 300;
   color: #ddd;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .section-heading-line {
@@ -357,6 +357,7 @@ left:100%
   object-fit: cover;
   opacity: 0.3;
   transition: opacity 0.3s;
+  
 }
 
 .controls {
@@ -376,6 +377,7 @@ left:100%
   position: absolute;
   top: 0;
   left: 0;
+
 }
 
 .video-bar {
@@ -405,21 +407,20 @@ left:100%
 .section-2-paragraph {
   width: 100rem;
   position: absolute;
-  bottom: 8rem;
+  bottom: 4rem;
   right: 15rem;
   font-size: 2rem;
   line-height: 1.5;
   color: #ddd;
   border-top: 0.3rem double #aaa;
   border-bottom: 0.3rem double #aaa;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: justify;
   text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.7);
-  line-height: 1.5rem;
 }
 
 .fa-quote-left {
