@@ -418,6 +418,7 @@ left:100%
   align-items: center;
   text-align: justify;
   text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.7);
+  line-height: 1.5rem;
 }
 
 .fa-quote-left {
