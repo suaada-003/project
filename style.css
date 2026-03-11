@@ -20,18 +20,16 @@ html {
   height: 8rem;
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
-  top: -8;
+  top: 0;
   padding: 3rem;
   z-index: 10;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s;
+  opacity: 1;
+  visibility: visible;
+  transition: height 0.5s;
 }
 
 .navbar.change {
   height: 100vh;
-  opacity: 1;
-  visibility: visible;
 }
 
 
@@ -121,8 +119,9 @@ left: 4rem;
 }
 
 .menu.change .line-1 {
-  transform: translate(100%, 1rem) rotate(-35deg);
-  transform-origin: right;
+  width: 50%;
+  transform: translate(0.4rem, 0.9rem) rotate(-45deg);
+  transform-origin: left center;
 }
 
 
@@ -132,12 +131,13 @@ left: 4rem;
 }
 
 .menu.change .line-3 {
-  transform: translateY(-1rem) rotate(35deg);
-  transform-origin: right;
+  width: 50%;
+  transform: translate(0.4rem, -0.9rem) rotate(45deg);
+  transform-origin: left center;
 }
 
 .menu.change .line-2 {
-  opacity: 0;
+  transform: translateX(0.4rem);
 }
 
 /* end of menu */
@@ -685,3 +685,5 @@ left:100%
   background-color: #5f0303;
 }
 /* End of Section 4 */
+
+
