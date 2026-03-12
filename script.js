@@ -81,3 +81,24 @@ if (window.Swiper && document.querySelector(".swiper-container")) {
   });
 }
 
+// Contact form: go to section 1 and restart animations
+const contactForm = document.querySelector(".contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // Jump to first section
+    window.location.hash = "#home";
+    window.scrollTo(0, 0);
+
+    // Simulate "refresh" by restarting navbar animation
+    const navbar = document.querySelector(".navbar");
+    if (navbar) {
+      navbar.style.animation = "none";
+      // force reflow
+      // eslint-disable-next-line no-unused-expressions
+      navbar.offsetWidth;
+      navbar.style.animation = "";
+    }
+  });
+}
+
