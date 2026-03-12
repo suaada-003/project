@@ -568,6 +568,25 @@ html {
   background: linear-gradient(to right, #0b7e48, #3be286);
 }
 
+/* Mirror the list text on pricing card back */
+.pricing-card-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  direction: rtl; /* right-to-left text flow */
+}
+
+.pricing-card-back ul li {
+  text-align: right; /* align each item to the right */
+}
+
+.pricing-card-back ul li span {
+  display: inline-block;
+  transform: scaleX(-1); /* horizontally flip the text */
+}
+
+
+
 /* End of Section 3 */
 
 /* Section 4 */
