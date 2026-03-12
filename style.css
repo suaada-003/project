@@ -1,4 +1,6 @@
-/* Common Styles */
+/* ==========================
+   COMMON STYLES
+   ========================== */
 * {
   margin: 0;
   padding: 0;
@@ -13,9 +15,9 @@ html {
   font-size: 62.5%;
 }
 
-/* End of Common Styles */
-
-/* Navbar */
+/* ==========================
+   NAVBAR
+   ========================== */
 .navbar {
   width: 100%;
   height: 8rem;
@@ -93,9 +95,7 @@ html {
   color: #9e0e09;
 }
 
-/* End of Navbar */
-
-/* Menu */
+/* MENU */
 .menu {
   width: 4rem;
   height: 4rem;
@@ -105,7 +105,7 @@ html {
   right: 4rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   cursor: pointer;
 }
 
@@ -121,45 +121,26 @@ html {
   margin-left: auto;
 }
 
-
 .line-3 {
   width: 50%;
   margin-left: auto;
 }
 
-
-
-/* Hamburger → Right Arrow */
 .menu.change .line-1 {
-  width: 70%;
-  transform-origin: left center;   /* pivot from left */
-  transform: translateY(0.1rem) rotate(45deg);
+  transform: translateY(0.35rem) rotate(-45deg);
 }
 
 .menu.change .line-2 {
-  width: 50%;
-  opacity: 1;                      /* keep visible */
-  transform: translateX(0.5rem);   /* shaft of arrow */
+  transform: none;
 }
 
 .menu.change .line-3 {
-  width: 70%;
-  transform-origin: left center;   /* pivot from left */
-  transform: translateY(-0.1rem) rotate(-45deg);
+  transform: translateY(-0.35rem) rotate(45deg);
 }
 
-.menu .line {
-  width: 100%;
-  height: 0.4rem;
-  background-color: #eee;
-  transition: all 0.4s ease;
-}
-
-
-
-/* End of Menu */
-
-/* Section 1 */
+/* ==========================
+   SECTION 1 – BANNER
+   ========================== */
 .section-1 {
   width: 100%;
   height: 100vh;
@@ -304,48 +285,31 @@ html {
   left: 100%;
 }
 
-/* End of Section 1 */
-
-/* Section 2 */
+/* ==========================
+   SECTION 2 – VIDEO & PARAGRAPH
+   ========================== */
 .section-2 {
-  width: 100%;
-  height: 100vh;
-  background-color: #222020;
   display: flex;
+  flex-direction: column;         
   align-items: center;
-  padding: 0 10rem;
-  position: relative;
-}
-
-.section-heading {
-  font-size: 6rem;
-  font-family: "Oswald", sans-serif;
-  font-weight: 300;
-  color: #ddd;
-  margin-right: 2rem;
-}
-
-.section-heading-line {
-  width: 10rem;
-  height: 0.2rem;
-  background-color: #ddd;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background-color: #222020;
+  width: 100%;
 }
 
 .video-wrapper {
-  width: 100rem;
-  height: 50rem;
-  position: absolute;
-  top: 5rem;
-  right: 5rem;
-  box-shadow: 3rem 3rem 6rem rgba(0, 0, 0, 0.7);
+  width: 100%;
+  max-width: 70rem;
+  height: 30rem;
+  position: relative;
   overflow: hidden;
+  box-shadow: 1rem 1rem 3rem rgba(0,0,0,0.6);
+  flex: 1 1 100%;
 }
 
-.video-wrapper:hover .controls {
-  transform: translateY(0);
-}
-
-.video {
+.video-wrapper .video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -357,237 +321,117 @@ html {
   width: 100%;
   position: absolute;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0,0,0,0.7);
   transform: translateY(calc(100% - 0.4rem));
   transition: transform 0.4s;
 }
 
-.video-bar-wrapper {
-  width: 100%;
-  height: 0.7rem;
-  background-color: #000;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.video-bar {
-  height: 100%;
-  width: 20%;
-  background-color: #d30819;
-  transition: width 0.2s linear;
-}
-
-.buttons {
-  padding: 2rem 1rem 1rem 1rem;
-}
-
-.buttons button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.buttons i {
-  width: 3rem;
-  height: 3rem;
-  font-size: 2.8rem;
-  color: #fff;
-}
-
 .section-2-paragraph {
-  width: 100rem;
-  position: absolute;
-  bottom: 4rem;
-  right: 5rem;
-  font-size: 2rem;
-  line-height: 1.5;
+  width: 100%;
+  max-width: 70rem;
+  font-size: 1.6rem;
+  line-height: 1.6;
   color: #ddd;
+  padding: 2rem;
   border-top: 0.3rem double #aaa;
   border-bottom: 0.3rem double #aaa;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: justify;
-  text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.7);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  flex: 1 1 100%;
 }
 
-.fa-quote-left {
-  align-self: flex-start;
-  font-size: 2rem;
-  color: #bbb;
-  margin-bottom: 2rem;
+/* Tablets & small desktops */
+@media only screen and (min-width: 768px) {
+  .section-2 {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .video-wrapper, .section-2-paragraph {
+    flex: 1 1 45%;
+  }
+  .video-wrapper {
+    height: 35rem;
+  }
+  .section-2-paragraph {
+    font-size: 1.8rem;
+    padding: 2rem;
+  }
 }
 
-.fa-quote-right {
-  align-self: flex-end;
-  font-size: 2rem;
-  color: #bbb;
+/* Large desktops */
+@media only screen and (min-width: 1200px) {
+  .section-2 {
+    padding: 5rem 10rem;
+    gap: 3rem;
+  }
+  .video-wrapper, .section-2-paragraph {
+    max-width: 100rem;
+  }
+  .video-wrapper {
+    height: 50rem;
+  }
+  .section-2-paragraph {
+    font-size: 2rem;
+  }
 }
 
-/* End of Section 2 */
-
-/* Section 3 */
+/* ==========================
+   SECTION 3 – PRICING CARDS
+   ========================== */
 .section-3 {
-  width: 100%;
-  height: 100vh;
-  background-color: #03070e;
   display: flex;
+  flex-direction: column;          
   align-items: center;
-  padding-left: 10rem;
+  gap: 3rem;
+  padding: 5rem 2rem;
+  background-color: #03070e;
+  width: 100%;
 }
 
 .pricing-cards-wrapper {
-  width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  padding: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
 }
 
 .pricing-card {
-  width: 28rem !important;
-  height: 45rem !important;
+  flex: 1 1 100%;                  
+  max-width: 28rem;
+  min-width: 250px;
+  height: auto;
   background-color: #181b1d;
   border-radius: 1rem;
-  box-shadow: 2rem 2rem 6rem rgba(0, 0, 0, 0.7);
-}
-
-.pricing-card-front {
-  display: none;
-}
-
-.pricing-card-heading {
-  font-size: 2rem;
-  font-weight: 300;
-  color: #fff;
-  width: 100%;
-  height: 5rem;
+  box-shadow: 2rem 2rem 6rem rgba(0,0,0,0.7);
   display: flex;
-  align-items: center;
-  padding-left: 2rem;
-  border-radius: 1rem 1rem 0 0;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
 }
 
-.heading-free {
-  background: linear-gradient(to right, #087285, #0da5d3);
+/* Tablets & small desktops */
+@media only screen and (min-width: 768px) {
+  .pricing-card {
+    flex: 1 1 45%;                
+  }
 }
 
-.heading-basic {
-  background: linear-gradient(to right, #946809, #bdba0e);
+/* Large desktops */
+@media only screen and (min-width: 1200px) {
+  .section-3 {
+    padding: 5rem 10rem;
+  }
+  .pricing-card {
+    flex: 1 1 28rem;              
+    height: 45rem;
+  }
 }
 
-.heading-standard {
-  background: linear-gradient(to right, #a10c14, #e23b3b);
-}
-
-.heading-premium {
-  background: linear-gradient(to right, #0b7e48, #3be286);
-}
-
-.pricing-card-price {
-  font-family: "MADE Soulmaze", sans-serif;
-  font-size: 7rem;
-  font-weight: 300;
-  color: #fff;
-}
-
-.pricing-card-list li {
-  margin-bottom: 0.5rem;
-}
-
-.pricing-card-list i {
-  font-size: 1.8rem;
-  width: 3rem;
-}
-
-.pricing-card-list span {
-  font-size: 1.8rem;
-  font-weight: 300;
-  letter-spacing: 0.1rem;
-}
-
-.list-free {
-  color: #0da5d3;
-}
-
-.list-basic {
-  color: #bdba0e;
-}
-
-.list-standard {
-  color: #e23b3b;
-}
-
-.list-premium {
-  color: #3be286;
-}
-
-.pricing-card-btn {
-  width: 18rem;
-  height: 5rem;
-  margin-bottom: 3rem;
-  border-radius: 3rem;
-  border: none;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  color: #fff;
-  text-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.5);
-}
-
-.btn-free {
-  background-color: #0da5d3;
-}
-
-.btn-basic {
-  background-color: #bdba0e;
-}
-
-.btn-standard {
-  background-color: #e23b3b;
-}
-
-.btn-premium {
-  background-color: #3be286;
-}
-
-.pricing-card-back {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1rem;
-  color: #fff;
-  text-align: center;
-  padding: 2rem;
-}
-
-.pricing-card-back a {
-  font-size: 2.5rem;
-  color: #fff;
-}
-
-.back-free {
-  background: linear-gradient(to right, #087285, #0da5d3);
-}
-
-.back-basic {
-  background: linear-gradient(to right, #946809, #bdba0e);
-}
-
-.back-standard {
-  background: linear-gradient(to right, #a10c14, #e23b3b);
-}
-
-.back-premium {
-  background: linear-gradient(to right, #0b7e48, #3be286);
-}
-
-/* End of Section 3 */
-
-/* Section 4 */
+/* ==========================
+   SECTION 4 – CONTACT
+   ========================== */
 .section-4 {
   width: 100%;
   height: 100vh;
@@ -675,9 +519,9 @@ html {
   background-color: #5f0303;
 }
 
-/* End of Section 4 */
-
-/* Footer */
+/* ==========================
+   FOOTER
+   ========================== */
 .footer {
   width: 100%;
   height: 12rem;
@@ -706,618 +550,40 @@ html {
   color: #ddd;
 }
 
-/* End of Footer */
-
-
-/* =============================================
-   RESPONSIVE STYLES — MOBILE FIRST
-   ============================================= */
-
-/* Large tablets / small laptops (max 1024px) */
-@media (max-width: 1024px) {
-  .section-2 {
-    padding: 0 4rem;
-    height: auto;
-    min-height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 12rem;
-    padding-bottom: 4rem;
-  }
-
-  .video-wrapper {
-    width: 100%;
-    height: 35rem;
-    position: relative;
-    top: auto;
-    right: auto;
-    margin-top: 3rem;
-  }
-
-  .section-2-paragraph {
-    width: 100%;
-    position: relative;
-    bottom: auto;
-    right: auto;
-    margin-top: 3rem;
-  }
-
-  .section-3 {
-    padding-left: 0;
-    height: auto;
-    min-height: 100vh;
-    padding: 10rem 2rem 4rem;
-  }
-
-  .pricing-cards-wrapper {
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
-  }
-
-  .section-4 {
-    padding: 0 4rem;
-    height: auto;
-    min-height: 100vh;
-    padding-top: 12rem;
-    padding-bottom: 4rem;
-  }
-
-  .contact-wrapper {
-    width: 100%;
-  }
-
-  .contact-form {
-    width: 100%;
-  }
-
-  .footer {
-    padding: 0 4rem;
-  }
-}
-
-/* Tablets (max 768px) */
-@media (max-width: 768px) {
-  html {
-    font-size: 55%;
-  }
-
-  /* Navbar */
-  .navbar-logo {
-    left: 2rem;
-  }
-
-  .nav-link {
-    font-size: 3rem;
-  }
-
-  /* Section 1 */
-  .banner {
-    top: 15%;
-    width: 100%;
-    padding: 0 1rem;
-  }
-
-  .banner-heading {
-    height: 12rem;
-    margin-bottom: 2rem;
-  }
-
-  .banner-heading span {
-    font-size: 7rem;
-    letter-spacing: 1.5rem;
-  }
-
-  @keyframes animateHeading {
-    0% {
-      transform: translateZ(8rem);
-      opacity: 0;
-      letter-spacing: 1.5rem;
-    }
-    3% {
-      transform: translateZ(0);
-      opacity: 1;
-      letter-spacing: 0.8rem;
-    }
-    25% {
-      transform: translateZ(0);
-      opacity: 1;
-      letter-spacing: 0.8rem;
-    }
-    28% {
-      transform: translateZ(8rem);
-      opacity: 0;
-      letter-spacing: 1.5rem;
-    }
-    100% {
-      transform: translateZ(8rem);
-      opacity: 0;
-      letter-spacing: 1.5rem;
-    }
-  }
-
-  .banner-paragraph {
-    font-size: 2.5rem;
-    width: 60%;
-  }
-
-  .banner-btn {
-    width: 22rem;
-    height: 5rem;
-    font-size: 1.6rem;
-  }
-
-  /* Section 2 */
-  .section-heading {
-    font-size: 4.5rem;
-  }
-
-  .video-wrapper {
-    height: 28rem;
-  }
-
-  /* Section 3 */
-  .pricing-card {
-    width: 24rem !important;
-    height: 42rem !important;
-  }
-
-  /* Section 4 */
-  .contact-details {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 4rem;
-  }
-
-  .contact-details div {
-    margin: 2rem;
-  }
-
-  /* Footer */
-  .footer {
-    flex-direction: column;
-    height: auto;
-    padding: 3rem 2rem;
-    text-align: center;
-    gap: 1.5rem;
-  }
-
-  .footer-nav a {
-    margin-right: 1.5rem;
-    font-size: 1.6rem;
-  }
-
-  .copyright {
-    font-size: 1.6rem;
-  }
-}
-
-/* Mobile phones — large (max 480px) */
-@media (max-width: 480px) {
-  html {
-    font-size: 48%;
-  }
-
-  /* Navbar */
-  .navbar-logo {
-    left: 1.5rem;
-    top: 1.8rem;
-  }
-
-  .navbar-logo a {
-    font-size: 2rem;
-  }
-
-  .navbar-logo span {
-    font-size: 2.8rem;
-  }
-
-  .menu {
-    right: 2rem;
-  }
-
-  .nav-link {
-    font-size: 2.5rem;
-    margin: 1.5rem 0;
-  }
-
-  /* Section 1 */
-  .banner {
-    top: 18%;
-    padding: 0 1rem;
-  }
-
-  .banner-heading {
-    height: 9rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .banner-heading span {
-    font-size: 5rem;
-  }
-
-  .banner-paragraph {
-    font-size: 2rem;
-    width: 80%;
-    margin-bottom: 3rem;
-  }
-
-  .banner-btn {
-    width: 20rem;
-    height: 4.5rem;
-    font-size: 1.5rem;
-  }
-
-  /* Section 2 */
-  .section-2 {
-    padding: 10rem 2rem 4rem;
-  }
-
-  .section-heading {
-    font-size: 3.5rem;
-  }
-
-  .video-wrapper {
-    height: 22rem;
-  }
-
-  .section-2-paragraph {
-    font-size: 1.6rem;
-    padding: 1rem;
-  }
-
-  /* Section 3 */
-.section-3 {
-  width: 100%;
-  height: 100vh;
-  background-color: #03070e;
-  display: flex;
-  align-items: center;
-  padding-left: 10rem;
-}
-
-.pricing-cards-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 5rem;
-}
-
-.pricing-card {
-  width: 28rem !important;
-  height: 45rem !important;
-  background-color: #181b1d;
-  border-radius: 1rem;
-  box-shadow: 2rem 2rem 6rem rgba(0, 0, 0, 0.7);
-}
-
-.pricing-card-front {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.pricing-card-heading {
-  font-size: 2rem;
-  font-weight: 300;
-  color: #fff;
-  width: 100%;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  padding-left: 2rem;
-  border-radius: 1rem 1rem 0 0;
-}
-
-.heading-free {
-  background: linear-gradient(to right, #087285, #0da5d3);
-}
-
-.heading-basic {
-  background: linear-gradient(to right, #946809, #bdba0e);
-}
-
-.heading-standard {
-  background: linear-gradient(to right, #a10c14, #e23b3b);
-}
-
-.heading-premium {
-  background: linear-gradient(to right, #0b7e48, #3be286);
-}
-
-.pricing-card-price {
-  font-family: "MADE Soulmaze", sans-serif;
-  font-size: 7rem;
-  font-weight: 300;
-  color: #fff;
-}
-
-.pricing-card-list li {
-  margin-bottom: 0.5rem;
-}
-
-.pricing-card-list i {
-  font-size: 1.8rem;
-  width: 3rem;
-}
-
-.pricing-card-list span {
-  font-size: 1.8rem;
-  font-weight: 300;
-  letter-spacing: 0.1rem;
-}
-
-.list-free {
-  color: #0da5d3;
-}
-
-.list-basic {
-  color: #bdba0e;
-}
-
-.list-standard {
-  color: #e23b3b;
-}
-
-.list-premium {
-  color: #3be286;
-}
-
-.pricing-card-btn {
-  width: 18rem;
-  height: 5rem;
-  margin-bottom: 3rem;
-  border-radius: 3rem;
-  border: none;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  color: #fff;
-  text-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.5);
-}
-
-.btn-free {
-  background-color: #0da5d3;
-}
-
-.btn-basic {
-  background-color: #bdba0e;
-}
-
-.btn-standard {
-  background-color: #e23b3b;
-}
-
-.btn-premium {
-  background-color: #3be286;
-}
-
-.pricing-card-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: rotateY(180deg);
-  border-radius: 1rem;
-}
-
-.pricing-card-back a {
-  font-size: 2.5rem;
-  color: #fff;
-}
-
-.back-free {
-  background: linear-gradient(to right, #087285, #0da5d3);
-}
-
-.back-basic {
-  background: linear-gradient(to right, #946809, #bdba0e);
-}
-
-.back-standard {
-  background: linear-gradient(to right, #a10c14, #e23b3b);
-}
-
-.back-premium {
-  background: linear-gradient(to right, #0b7e48, #3be286);
-}
-
-/* Hide pricing card items */
-.pricing-card-list,
-.pricing-card-list li,
-.pricing-card-list i,
-.pricing-card-list span {
-  display: none !important;
-}
-
-
-/* End of Section 3 */
-
-
-  
-
-  /* Section 4 */
-  .section-4 {
-    padding: 10rem 2rem 4rem;
-  }
-
-  .contact-wrapper {
-    width: 100%;
-  }
-
-  .contact-wrapper h1 {
-    font-size: 3rem;
-    text-align: center;
-  }
-
-  .contact-details {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3rem;
-  }
-
-  .contact-details div {
-    width: 100%;
-    margin: 1.5rem 0;
-  }
-
-  .contact-details i {
-    font-size: 4rem;
-  }
-
-  .contact-details h3 {
-    font-size: 2rem;
-  }
-
-  .contact-details p {
-    font-size: 1.4rem;
-  }
-
-  .contact-form {
-    width: 100%;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 1.5rem;
-    padding: 1.2rem;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 2rem 1.5rem;
-  }
-
-  .footer-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .footer-nav a {
-    margin-right: 1rem;
-    font-size: 1.4rem;
-  }
-
-  .copyright {
-    font-size: 1.4rem;
-  }
-}
-
-/* Mobile phones — small (max 375px) */
-@media (max-width: 375px) {
-  html {
-    font-size: 43%;
-  }
-
-  .banner-heading span {
-    font-size: 4.2rem;
-  }
-
-  .banner-paragraph {
-    font-size: 1.8rem;
-    width: 90%;
-  }
-
-  .banner-btn {
-    width: 18rem;
-    height: 4rem;
-  }
-
-  .section-heading {
-    font-size: 3rem;
-  }
-
-  .nav-link {
-    font-size: 2.2rem;
-  }
-
-  .pricing-card {
-    max-width: 28rem !important;
-  }
-
-  .contact-wrapper h1 {
-    font-size: 2.5rem;
-  }
-}
-
-/* Mobile phones — extra small (max 320px) */
-@media (max-width: 320px) {
-  html {
-    font-size: 38%;
-  }
-
-  .navbar-logo a {
-    font-size: 1.8rem;
-  }
-
-  .navbar-logo span {
-    font-size: 2.4rem;
-  }
-
-  .banner-heading span {
-    font-size: 3.5rem;
-  }
-
-  .banner-paragraph {
-    font-size: 1.6rem;
-    width: 95%;
-  }
-
-  .banner-btn {
-    width: 16rem;
-    height: 4rem;
-    font-size: 1.3rem;
-  }
-
-  .pricing-card {
-    max-width: 26rem !important;
-  }
-
-  .contact-wrapper h1 {
-    font-size: 2.2rem;
-  }
-
-  .footer-nav a {
-    font-size: 1.2rem;
-    margin-right: 0.8rem;
-  }
-
-  .copyright {
-    font-size: 1.2rem;
-  }
-}
-
-
-
-/* ===================== RESPONSIVE FIX ===================== */
-@media (max-width: 1024px) {
+/* ==========================
+   RESPONSIVE FIXES – GENERAL
+   ========================== */
+@media only screen and (max-width: 992px) {
   .navbar-logo a { font-size: 2rem; }
-  .nav-link { font-size: 2.5rem; }
-  .banner-heading span { font-size: 8rem; }
-  .banner-paragraph { width: 60%; font-size: 2rem; }
-  .banner-btn { width: 18rem; height: 5rem; font-size: 1.6rem; }
-  .pricing-card { width: 30rem; min-height: auto; }
+  .nav-link { font-size: 3rem; }
+  .menu { top: 1.5rem; right: 2rem; width: 3.5rem; height: 3.5rem; }
+  .line-1, .line-3 { width: 45%; }
+
+  .section-1 .banner-heading span { font-size: 8rem; }
+  .banner-paragraph { width: 50%; font-size: 3rem; }
+  .banner-btn { width: 25rem; height: 5rem; font-size: 1.8rem; }
+
+  .section-4 { flex-direction: column; padding: 5rem 2rem; height: auto; }
+  .contact-details { flex-direction: column; margin-bottom: 5rem; }
+  .contact-details div { width: 80%; margin: 2rem 0; }
+  .contact-form { width: 100%; }
+  .contact-form input, .contact-form textarea { font-size: 1.6rem; }
+
+  .footer { flex-direction: column; height: auto; padding: 3rem 2rem; }
+  .footer-nav { margin-bottom: 2rem; }
 }
 
-@media (max-width: 768px) {
-  .navbar { padding: 1rem 2rem; }
+@media only screen and (max-width: 576px) {
   .navbar-logo a { font-size: 1.8rem; }
-  .nav-link { font-size: 2rem; margin: 1rem 0; }
-  .menu { top: 1rem; right: 1.5rem; }
-  .banner-heading span { font-size: 5rem; }
-  .banner-paragraph { width: 80%; font-size: 1.6rem; }
-  .banner-btn { width: 15rem; height: 4.5rem; font-size: 1.4rem; }
-  .video-wrapper { width: 100%; height: auto; }
-  .pricing-card { width: 90%; min-height: auto; }
-  .contact-details { flex-direction: column; gap: 2rem; }
-  .contact-form input, .contact-form textarea { font-size: 1.6rem; }
-  .footer { flex-direction: column; gap: 1.5rem; }
+  .nav-link { font-size: 2.5rem; }
+  .banner-heading span { font-size: 6rem; }
+  .banner-paragraph { width: 80%; font-size: 2.4rem; }
+  .banner-btn { width: 20rem; height: 4.5rem; font-size: 1.6rem; }
+
+  .section-2-paragraph { font-size: 1.5rem; padding: 1.5rem 1rem; }
+  .contact-wrapper h1 { font-size: 3rem; }
+  .contact-form input, .contact-form textarea { font-size: 1.4rem; }
+  .contact-details i { font-size: 4rem; }
+  .footer-nav a { font-size: 1.6rem; margin-right: 1.5rem; }
+  .copyright { font-size: 1.6rem; }
 }
