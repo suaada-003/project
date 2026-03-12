@@ -406,109 +406,44 @@ html {
 
 /* End of Section 2 */
 
-/* =======================
-   SECTION 3 – PRICING CARDS
-   ======================= */
-
+/* Section 3 */
 .section-3 {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #03070e;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 5rem 0;
-}
-
-.section-3 .section-heading {
-  font-size: 6rem;
-  font-family: "Oswald", sans-serif;
-  font-weight: 300;
-  color: #ddd;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.section-3 .section-heading-line {
-  width: 10rem;
-  height: 0.2rem;
-  background-color: #ddd;
-  margin-bottom: 5rem;
-}
-
-/* Container for Swiper cards */
-.swiper-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  perspective: 1500px; /* Needed for 3D flip effect */
+  padding-left: 10rem;
 }
 
 .pricing-cards-wrapper {
+  width: 100%;
   display: flex;
-  gap: 4rem;
+  justify-content: space-evenly;
+  padding: 5rem;
 }
 
 .pricing-card {
-  width: 28rem;
-  height: 45rem;
+  width: 28rem !important;
+  height: 45rem !important;
+  background-color: #181b1d;
   border-radius: 1rem;
-  perspective: 1500px;
-  cursor: pointer;
-}
-
-/* Flip Card */
-.pricing-card-front,
-.pricing-card-back {
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-  backface-visibility: hidden;
-  transition: transform 0.8s;
-  position: absolute;
-  top: 0;
-  left: 0;
+  box-shadow: 2rem 2rem 6rem rgba(0, 0, 0, 0.7);
 }
 
 .pricing-card-front {
-  background-color: #181b1d;
-  z-index: 2;
+  display: block;
 }
 
-.pricing-card-back {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1f2225;
-  transform: rotateY(180deg);
-  color: #fff;
-  text-align: center;
-  font-size: 2.5rem;
-  font-family: "Oswald", sans-serif;
-}
-
-/* Hide list on the back */
-.pricing-card-back .pricing-card-list,
-.pricing-card-back ul {
-  display: none !important;
-}
-
-/* Flip on hover */
-.pricing-card:hover .pricing-card-front {
-  transform: rotateY(180deg);
-}
-
-.pricing-card:hover .pricing-card-back {
-  transform: rotateY(0deg);
-  z-index: 2;
-}
-
-/* Card content */
 .pricing-card-heading {
   font-size: 2rem;
   font-weight: 300;
   color: #fff;
-  padding: 2rem;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
   border-radius: 1rem 1rem 0 0;
 }
 
@@ -530,44 +465,52 @@ html {
 
 .pricing-card-price {
   font-family: "MADE Soulmaze", sans-serif;
-  font-size: 5rem;
+  font-size: 7rem;
+  font-weight: 300;
   color: #fff;
-  text-align: center;
-  margin: 2rem 0;
-}
-
-/* Feature list */
-.pricing-card-list {
-  padding: 0 2rem;
-  margin-bottom: 2rem;
 }
 
 .pricing-card-list li {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  font-size: 1.6rem;
-  color: #ccc;
+  margin-bottom: 0.5rem;
 }
 
 .pricing-card-list i {
-  margin-right: 1rem;
+  font-size: 1.8rem;
+  width: 3rem;
+}
+
+.pricing-card-list span {
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+
+.list-free {
   color: #0da5d3;
 }
 
-/* Buttons */
+.list-basic {
+  color: #bdba0e;
+}
+
+.list-standard {
+  color: #e23b3b;
+}
+
+.list-premium {
+  color: #3be286;
+}
+
 .pricing-card-btn {
-  display: block;
-  width: 80%;
-  margin: 0 auto 2rem auto;
-  padding: 1.2rem 0;
-  border-radius: 2rem;
+  width: 18rem;
+  height: 5rem;
+  margin-bottom: 3rem;
+  border-radius: 3rem;
+  border: none;
   font-size: 1.6rem;
   text-transform: uppercase;
-  font-weight: 500;
-  cursor: pointer;
-  border: none;
   color: #fff;
+  text-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.5);
 }
 
 .btn-free {
@@ -586,52 +529,37 @@ html {
   background-color: #3be286;
 }
 
-/* Back order button */
-.pricing-card-back a {
+.pricing-card-back {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
   color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.pricing-card-back a {
   font-size: 2.5rem;
-  text-decoration: none;
-  padding: 1.5rem 3rem;
-  border: 2px solid #fff;
-  border-radius: 2rem;
-  transition: all 0.3s ease;
+  color: #fff;
 }
 
-.pricing-card-back a:hover {
-  background-color: #fff;
-  color: #1f2225;
+.back-free {
+  background: linear-gradient(to right, #087285, #0da5d3);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .pricing-cards-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .pricing-card {
-    margin-bottom: 3rem;
-  }
+.back-basic {
+  background: linear-gradient(to right, #946809, #bdba0e);
 }
 
-@media (max-width: 768px) {
-  .section-3 .section-heading {
-    font-size: 4rem;
-  }
+.back-standard {
+  background: linear-gradient(to right, #a10c14, #e23b3b);
+}
 
-  .pricing-card {
-    width: 90%;
-    height: 35rem;
-  }
-
-  .pricing-card-price {
-    font-size: 4rem;
-  }
-
-  .pricing-card-back a {
-    font-size: 2rem;
-    padding: 1rem 2rem;
-  }
+.back-premium {
+  background: linear-gradient(to right, #0b7e48, #3be286);
 }
 
 
