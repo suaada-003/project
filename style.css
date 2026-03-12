@@ -905,3 +905,115 @@ left:100%
     font-size: 2.2rem;
   }
 }
+
+/* Mobile-first fine tuning (most phones: 320–480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 2rem;
+  }
+
+  .navbar-logo {
+    top: 1.8rem;
+  }
+
+  .navbar-logo a {
+    font-size: 2rem;
+  }
+
+  .navbar-logo span {
+    font-size: 2.8rem;
+  }
+
+  .section-heading {
+    font-size: 3.8rem;
+  }
+
+  .section-heading-line {
+    width: 7rem;
+  }
+
+  /* Section 1 */
+  .banner {
+    top: 18%;
+    padding: 0 1.5rem;
+  }
+
+  .banner-heading {
+    height: 16rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .banner-heading span {
+    font-size: 4.2rem;
+    letter-spacing: 0.6rem;
+  }
+
+  .banner-paragraph {
+    width: 100%;
+    font-size: 2.4rem;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .banner-btn {
+    width: 20rem;
+    height: 5.2rem;
+    font-size: 1.8rem;
+  }
+
+  /* Section 2 */
+  .buttons {
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+
+  .buttons i {
+    font-size: 2.4rem;
+  }
+
+  .section-2-paragraph {
+    font-size: 1.7rem;
+  }
+
+  /* Section 3 */
+  .pricing-card {
+    width: 22rem !important;
+    height: 34rem !important;
+  }
+
+  .pricing-card-back a {
+    font-size: 2rem;
+  }
+
+  /* Section 4 */
+  .contact-wrapper h1 {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .menu {
+    right: 1.5rem;
+  }
+
+  .navbar-logo {
+    left: 1.5rem;
+  }
+
+  .banner-heading span {
+    font-size: 3.6rem;
+    letter-spacing: 0.4rem;
+  }
+
+  .pricing-card {
+    width: 20rem !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav-link {
+    font-size: 2.6rem;
+  }
+
+  .banner-btn {
+    width: 18rem;
+  }
+}
