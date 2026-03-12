@@ -586,6 +586,11 @@ html {
 }
 
 
+/* Hide the list on the back of pricing cards */
+.pricing-card-back .pricing-card-list {
+  display: none;
+}
+
 
 /* End of Section 3 */
 
