@@ -129,24 +129,22 @@ html {
 
 /* Hamburger → Arrow transformation */
 .menu.change .line-1 {
-  width: 70%;
-  transform-origin: right center;
-  transform: translateY(0.5rem) rotate(-45deg);
+  width: 60%;
+  transform-origin: left center;
+  transform: translateY(0.6rem) rotate(45deg);
 }
 
 .menu.change .line-2 {
-  width: 70%;
-  opacity: 1; /* keep it visible */
-  transform-origin: right center;
-  transform: translateX(-0.5rem); /* shift left to form arrow shaft */
+  width: 100%;
+  opacity: 1; /* keep visible */
+  transform: translateX(0.5rem); /* shaft of arrow */
 }
 
 .menu.change .line-3 {
-  width: 70%;
-  transform-origin: right center;
-  transform: translateY(-0.5rem) rotate(45deg);
+  width: 60%;
+  transform-origin: left center;
+  transform: translateY(-0.6rem) rotate(-45deg);
 }
-
 
 
 
