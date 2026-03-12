@@ -8,6 +8,7 @@ if (menu && navbar) {
     menu.classList.toggle("change");
   });
 }
+
 // End of Navbar
 
 // Section 2 Video
