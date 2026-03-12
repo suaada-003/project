@@ -2,10 +2,12 @@
 const menu = document.querySelector(".menu");
 const navbar = document.querySelector(".navbar");
 
-menu.addEventListener("click", () => {
-  navbar.classList.toggle("change");
-  menu.classList.toggle('change')
-});
+if (menu && navbar) {
+  menu.addEventListener("click", () => {
+    navbar.classList.toggle("change");
+    menu.classList.toggle("change");
+  });
+}
 // End of Navbar
 
 // Section 2 Video
@@ -91,13 +93,11 @@ if (contactForm) {
     window.scrollTo(0, 0);
 
     // Simulate "refresh" by restarting navbar animation
-    const navbar = document.querySelector(".navbar");
-    if (navbar) {
-      navbar.style.animation = "none";
-      // force reflow
-      // eslint-disable-next-line no-unused-expressions
-      navbar.offsetWidth;
-      navbar.style.animation = "";
+    const navbarEl = document.querySelector(".navbar");
+    if (navbarEl) {
+      navbarEl.style.animation = "none";
+      void navbarEl.offsetWidth; // force reflow
+      navbarEl.style.animation = "";
     }
   });
 }
