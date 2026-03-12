@@ -1,105 +1,138 @@
-// Navbar
+/* ================= NAVBAR ================= */
+
 const menu = document.querySelector(".menu");
 const navbar = document.querySelector(".navbar");
 
 if (menu && navbar) {
   menu.addEventListener("click", () => {
-    navbar.classList.toggle("change");
     menu.classList.toggle("change");
+    navbar.classList.toggle("change");
   });
 }
 
-// End of Navbar
+/* ================= VIDEO PLAYER ================= */
 
-// Section 2 Video
 const video = document.querySelector(".video");
 const playPauseBtn = document.querySelector("#play-pause");
 const playPauseIcon = playPauseBtn ? playPauseBtn.querySelector("i") : null;
 const bar = document.querySelector(".video-bar");
 
-const setPlayingUI = (isPlaying) => {
-  if (!playPauseIcon) return;
+function updateVideoUI(isPlaying) {
+  if (!video || !playPauseIcon) return;
+
   playPauseIcon.className = isPlaying
     ? "far fa-pause-circle"
     : "far fa-play-circle";
-  video.style.opacity = isPlaying ? ".7" : ".3";
-};
 
-const playPause = async () => {
-  if (!video || !playPauseBtn) return;
+  video.style.opacity = isPlaying ? "0.7" : "0.3";
+}
+
+async function toggleVideo() {
+  if (!video) return;
 
   if (video.paused) {
     try {
       await video.play();
-      setPlayingUI(true);
-    } catch (e) {
-      // If the browser blocks playback, keep UI in "paused"
-      setPlayingUI(false);
+      updateVideoUI(true);
+    } catch {
+      updateVideoUI(false);
     }
   } else {
     video.pause();
-    setPlayingUI(false);
+    updateVideoUI(false);
   }
-};
+}
+
+/* Play button click */
 
 if (playPauseBtn) {
   playPauseBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    playPause();
+    toggleVideo();
   });
 }
+
+/* Video click */
 
 if (video) {
-  video.addEventListener("click", () => {
-    playPause();
-  });
+  video.addEventListener("click", toggleVideo);
 }
 
+/* Video progress bar */
 
 if (video) {
   video.addEventListener("timeupdate", () => {
     if (!bar || !video.duration) return;
-    const barWidth = video.currentTime / video.duration;
-    bar.style.width = `${barWidth * 100}%`;
-    if (video.ended) setPlayingUI(false);
+
+    const progress = video.currentTime / video.duration;
+    bar.style.width = `${progress * 100}%`;
+
+    if (video.ended) updateVideoUI(false);
   });
 }
-// End of Section 2 Video
 
+/* ================= PRICING SLIDER ================= */
 
-// Section 3 Swiper
 if (window.Swiper && document.querySelector(".swiper-container")) {
+
   new Swiper(".swiper-container", {
+
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
+
     slidesPerView: "auto",
+
     coverflowEffect: {
-      rotate: 70,
+      rotate: 50,
       stretch: 0,
-      depth: 100,
+      depth: 120,
       modifier: 1,
       slideShadows: true,
     },
-  });
-}
 
-// Contact form: go to section 1 and restart animations
-const contactForm = document.querySelector(".contact-form");
-if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    // Jump to first section
-    window.location.hash = "#home";
-    window.scrollTo(0, 0);
+    /* Responsive slider */
 
-    // Simulate "refresh" by restarting navbar animation
-    const navbarEl = document.querySelector(".navbar");
-    if (navbarEl) {
-      navbarEl.style.animation = "none";
-      void navbarEl.offsetWidth; // force reflow
-      navbarEl.style.animation = "";
+    breakpoints: {
+
+      320: {
+        slidesPerView: 1,
+      },
+
+      768: {
+        slidesPerView: 2,
+      },
+
+      1024: {
+        slidesPerView: 3,
+      }
+
     }
+
   });
+
 }
 
+/* ================= CONTACT FORM ================= */
+
+const contactForm = document.querySelector(".contact-form");
+
+if (contactForm) {
+
+  contactForm.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    alert("Message sent successfully!");
+
+    /* Scroll to home */
+
+    window.location.hash = "#home";
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  });
+
+}
