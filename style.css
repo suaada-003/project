@@ -133,7 +133,7 @@ html {
 .menu.change .line-1 {
   width: 70%;
   transform-origin: left center;   /* pivot from left */
-  transform: translateY(0.2rem) rotate(45deg);
+  transform: translateY(0.1rem) rotate(45deg);
 }
 
 .menu.change .line-2 {
@@ -145,7 +145,7 @@ html {
 .menu.change .line-3 {
   width: 70%;
   transform-origin: left center;   /* pivot from left */
-  transform: translateY(-0.2rem) rotate(-45deg);
+  transform: translateY(-0.1rem) rotate(-45deg);
 }
 
 .menu .line {
