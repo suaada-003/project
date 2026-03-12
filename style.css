@@ -131,18 +131,22 @@ html {
 .menu.change .line-1 {
   width: 70%;
   transform-origin: right center;
-  transform: translateY(0.4rem) rotate(-45deg);
+  transform: translateY(0.5rem) rotate(-45deg);
 }
 
 .menu.change .line-2 {
-  opacity: 0; /* hide middle line */
+  width: 70%;
+  opacity: 1; /* keep it visible */
+  transform-origin: right center;
+  transform: translateX(-0.5rem); /* shift left to form arrow shaft */
 }
 
 .menu.change .line-3 {
   width: 70%;
   transform-origin: right center;
-  transform: translateY(-0.4rem) rotate(45deg);
+  transform: translateY(-0.5rem) rotate(45deg);
 }
+
 
 
 
