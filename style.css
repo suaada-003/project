@@ -18,6 +18,11 @@
     width: 100%;
     padding: 1rem;
   }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 html {
