@@ -127,26 +127,26 @@ html {
   margin-left: auto;
 }
 
-/* Hamburger → Arrow transformation */
+
+
+/* Hamburger → Right Arrow */
 .menu.change .line-1 {
-  width: 60%;
-  transform-origin: left center;
+  width: 70%;
+  transform-origin: left center;   /* pivot from left */
   transform: translateY(0.6rem) rotate(45deg);
 }
 
 .menu.change .line-2 {
   width: 100%;
-  opacity: 1; /* keep visible */
-  transform: translateX(0.5rem); /* shaft of arrow */
+  opacity: 1;                      /* keep visible */
+  transform: translateX(0.5rem);   /* shaft of arrow */
 }
 
 .menu.change .line-3 {
-  width: 60%;
-  transform-origin: left center;
+  width: 70%;
+  transform-origin: left center;   /* pivot from left */
   transform: translateY(-0.6rem) rotate(-45deg);
 }
-
-
 
 
 /* End of Menu */
