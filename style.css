@@ -977,6 +977,16 @@ html {
     flex-shrink: 0;
   }
 
+
+  /* Hide pricing card items */
+.pricing-card-list,
+.pricing-card-list li,
+.pricing-card-list i,
+.pricing-card-list span {
+  display: none !important;
+}
+
+
   /* Section 4 */
   .section-4 {
     padding: 10rem 2rem 4rem;
