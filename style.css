@@ -9,6 +9,17 @@
   font-family: "Baloo Da 2", cursive;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
 html {
   font-size: 62.5%;}
 
