@@ -129,9 +129,9 @@ html {
 
 /* Hamburger → Arrow transformation */
 .menu.change .line-1 {
-  width: 60%;
+  width: 70%;
   transform-origin: right center;
-  transform: translateY(0.35rem) rotate(30deg);
+  transform: translateY(0.4rem) rotate(-45deg);
 }
 
 .menu.change .line-2 {
@@ -139,9 +139,9 @@ html {
 }
 
 .menu.change .line-3 {
-  width: 60%;
+  width: 70%;
   transform-origin: right center;
-  transform: translateY(-0.35rem) rotate(-30deg);
+  transform: translateY(-0.4rem) rotate(45deg);
 }
 
 
