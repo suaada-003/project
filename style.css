@@ -9,6 +9,11 @@
   font-family: "Baloo Da 2", cursive;
 }
 
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
